@@ -31,11 +31,47 @@ export default function Navbar() {
           duration: 0.3,
           ease: "power2.out",
         });
+        gsap.to("#line1", {
+          rotate: 45,
+          y: -1,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+        gsap.to("#line2", {
+          opacity: 1,
+          x: 24,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+        gsap.to("#line3", {
+          rotate: -45,
+          y: -1,
+          duration: 0.3,
+          ease: "power2.out",
+        });
       } else {
         gsap.to(menuRef.current, {
           opacity: 0,
           y: -20,
           height: 0,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+        gsap.to("#line1", {
+          rotate: 0,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+        gsap.to("#line2", {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+        gsap.to("#line3", {
+          rotate: 0,
+          y: 0,
           duration: 0.3,
           ease: "power2.in",
         });
@@ -81,30 +117,17 @@ export default function Navbar() {
                   y1="6"
                   x2="21"
                   y2="6"
-                  className={clsx(
-                    "origin-left transition",
-                    isOpen && "rotate-45 -translate-y-1"
-                  )}
+                  id="line1"
+                  className="origin-top-left"
                 ></line>
-                <line
-                  x1="3"
-                  y1="12"
-                  x2="21"
-                  y2="12"
-                  className={clsx(
-                    "origin-left transition",
-                    isOpen && "opacity-0"
-                  )}
-                ></line>
+                <line x1="3" y1="12" x2="21" y2="12" id="line2"></line>
                 <line
                   x1="3"
                   y1="18"
                   x2="21"
                   y2="18"
-                  className={clsx(
-                    "origin-left transition",
-                    isOpen && "-rotate-45 translate-y-1"
-                  )}
+                  id="line3"
+                  className="origin-top-left"
                 ></line>
               </svg>
               <div></div>
