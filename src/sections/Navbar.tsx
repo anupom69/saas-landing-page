@@ -146,7 +146,7 @@ export default function Navbar() {
               </Button>
             </div>
           </div>
-          <div ref={menuRef} className="opacity-0 h-0">
+          <div ref={menuRef} className="opacity-0 h-0 overflow-hidden">
             <div
               className={clsx(
                 "flex flex-col md:hidden items-center gap-4 py-4"
