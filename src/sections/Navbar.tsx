@@ -39,7 +39,7 @@ export default function Navbar() {
         });
         gsap.to("#line2", {
           opacity: 1,
-          x: 24,
+          xPercent: 200,
           duration: 0.3,
           ease: "power2.out",
         });
@@ -65,7 +65,7 @@ export default function Navbar() {
         });
         gsap.to("#line2", {
           opacity: 1,
-          x: 0,
+          xPercent: 0,
           duration: 0.3,
           ease: "power2.in",
         });
@@ -82,9 +82,10 @@ export default function Navbar() {
     }
   );
   return (
+    <>
     <section className="py-4 lg:py-8 fixed w-full top-0 z-50">
       <div className="container max-w-5xl">
-        <div className="border border-white/15 rounded-[27px] bg-neutral-950/70 backdrop-blur">
+        <div className="border border-white/15 rounded-[27px] md:rounded-full bg-neutral-950/70 backdrop-blur">
           <div className="grid grid-cols-2 lg:grid-cols-3 p-2 px-4 md:pr-2 items-center">
             <div>
               <Image src={logoImage} alt="logo" className="h-9 md w-auto" />
@@ -98,7 +99,7 @@ export default function Navbar() {
                 ))}
               </nav>
             </div>
-            <div className="flex items-center justify-end gap-4">
+            <div className="flex items-center justify-end">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -166,6 +167,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+      <div className="pb-[86px] md:pb-[98px] lg:pb-[130px]"></div>
+    </>
   );
 }
