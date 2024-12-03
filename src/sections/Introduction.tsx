@@ -37,7 +37,7 @@ export default function Introduction() {
           <div className="flex items-center justify-center">
             <Tag>Introducing Layers</Tag>
           </div>
-          <div className="text-4xl md:text-6xl lg:text-7xl font-medium text-center mt-10">
+          <div className="text-3xl md:text-6xl lg:text-7xl font-medium text-center mt-10">
             <span>Your creative process deserves better.</span>{" "}
             <span ref={containerRef} className="text-white">
               {text}
