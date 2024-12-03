@@ -17,8 +17,8 @@ export default function Introduction() {
       types: "words,chars",
       tagName: "span",
     });
-    gsap.from(text.words, {
-      opacity: 0.15,
+    gsap.from(text.chars, {
+      opacity: 0.2,
       duration: 1,
       stagger: 0.5,
       scrollTrigger: {
