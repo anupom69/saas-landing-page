@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactLenis } from "lenis/react";
 import "./globals.css";
+import DeveloperCredit from "@/components/Credit";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({
       >
         <ReactLenis root>
           {children}
+          <DeveloperCredit />
         </ReactLenis>
       </body>
     </html>

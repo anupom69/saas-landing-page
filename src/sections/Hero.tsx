@@ -106,7 +106,7 @@ export default function Hero() {
       });
   });
   return (
-    <section className="py-24 overflow-x-clip">
+    <section id="#" className="py-24 overflow-x-clip">
       <div className="container relative">
         <div
           id="left-design"
