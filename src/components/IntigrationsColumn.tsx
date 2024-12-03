@@ -1,9 +1,9 @@
 import { IntigrationsType } from "@/sections/Integrations";
 import clsx from "clsx";
 import Image from "next/image";
-export default function IntigrationsColumn({integrations, className}: {integrations: IntigrationsType, className?: string}) {
+export default function IntigrationsColumn({integrations, className, ...props}: {integrations: IntigrationsType, className?: string} & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={clsx("flex flex-col gap-4 pb-4", className)}>
+    <div className={clsx("flex flex-col gap-4 pb-4", className)} {...props}>
           {integrations.map((integration) => (
             <div
               key={integration.name}
