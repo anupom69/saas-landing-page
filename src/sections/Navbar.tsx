@@ -152,7 +152,7 @@ export default function Navbar() {
                 <div></div>
                 <Button
                   variant="secondary"
-                  className="hidden md:inline-flex items-center"
+                  className="hidden md:inline-flex items-center mr-1"
                 >
                   Log In
                 </Button>
