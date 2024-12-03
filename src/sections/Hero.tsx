@@ -113,6 +113,7 @@ export default function Hero() {
           className="opacity-0 translate-y-[100px] -translate-x-[100px] absolute -left-32 top-16 hidden lg:block"
         >
           <Image
+            priority
             draggable={false}
             src={DesignExample1Image}
             alt="Design Example 1"
@@ -129,6 +130,7 @@ export default function Hero() {
           className="opacity-0 translate-x-[100px] translate-y-[100px] absolute -right-64 -top-16 hidden lg:block"
         >
           <Image
+            priority
             draggable={false}
             src={DesignExample2Image}
             alt="Design Example 2"
