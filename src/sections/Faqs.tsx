@@ -1,7 +1,5 @@
-"use client";
+import Faq from "@/components/Faq";
 import Tag from "@/components/Tag";
-import clsx from "clsx";
-import { useState } from "react";
 
 const faqs = [
   {
@@ -32,7 +30,6 @@ const faqs = [
 ];
 
 export default function Faqs() {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <section className="py-24">
       <div className="container">
@@ -41,45 +38,12 @@ export default function Faqs() {
         </div>
 
         <h2 className="text-6xl text-center font-medium mt-6 max-w-xl mx-auto">
-          Questions? We've got <span className="text-lime-400">answers</span>
+          Questions? We&apos;ve got{" "}
+          <span className="text-lime-400">answers</span>
         </h2>
         <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
           {faqs.map((faq, index) => (
-            <div
-              key={faq.question}
-              className="bg-neutral-900 border-white/10 rounded-2xl p-6"
-              onClick={() =>
-                setSelectedIndex((c) => (c === index ? -1 : index))
-              }
-            >
-              <div className="flex justify-between items-center cursor-pointer">
-                <h3 className="font-medium">{faq.question}</h3>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={clsx(
-                    "feather feather-plus text-lime-400 flex-shrink-0",
-                    selectedIndex === index && "rotate-45"
-                  )}
-                  
-                >
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </div>
-              <div
-                className={clsx("mt-6", selectedIndex !== index && "hidden")}
-              >
-                <p className="text-white/50">{faq.answer}</p>
-              </div>
-            </div>
+            <Faq key={index} faq={faq} index={index} />
           ))}
         </div>
       </div>
