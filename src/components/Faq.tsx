@@ -5,29 +5,33 @@ import gsap from "gsap";
 import { useRef, useState } from "react";
 export default function Faq({
   faq,
+  index,
+  activeIndex,
+  setActiveIndex
 }: {
   faq: { question: string; answer: string };
   index: number;
+  activeIndex: number | null;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
 }) {
   gsap.registerPlugin(useGSAP);
   const svgPlusRef = useRef<SVGSVGElement>(null);
   const ansRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
   useGSAP(() => {
     if (!svgPlusRef.current || !ansRef.current) return;
     const tl = gsap.timeline()
-    if (isOpen) {
+    if (index === activeIndex) {
       tl.to(ansRef.current, { height: "auto", duration: 0.5, ease: "back.out" });
       tl.to(svgPlusRef.current, { rotate: 45, duration: 0.5, ease: "back.out" }, "<");
     } else {
       tl.to(ansRef.current, { height: 0, duration: 0.5, ease: "back.out" });
       tl.to(svgPlusRef.current, { rotate: 0, duration: 0.5, ease: "back.out" }, "<");
     }
-  }, [isOpen]);
+  }, [activeIndex]);
   return (
     <div
       key={faq.question}
-      onClick={() => setIsOpen((c) => !c)}
+      onClick={() => setActiveIndex(index === activeIndex ? null : index)}
       className="cursor-default bg-neutral-900 border-white/10 rounded-2xl p-6"
     >
       <div className="flex justify-between items-center cursor-pointer">

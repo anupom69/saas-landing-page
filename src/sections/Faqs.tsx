@@ -1,5 +1,7 @@
+'use client';
 import Faq from "@/components/Faq";
 import Tag from "@/components/Tag";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -30,20 +32,20 @@ const faqs = [
 ];
 
 export default function Faqs() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   return (
     <section id="faqs" className="py-24">
       <div className="container">
         <div className="flex justify-center">
           <Tag>FAQs</Tag>
         </div>
-
         <h2 className="text-6xl text-center font-medium mt-6 max-w-xl mx-auto">
           Questions? We&apos;ve got{" "}
           <span className="text-lime-400">answers</span>
         </h2>
         <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
           {faqs.map((faq, index) => (
-            <Faq key={index} faq={faq} index={index} />
+            <Faq key={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex} faq={faq} index={index} />
           ))}
         </div>
       </div>
