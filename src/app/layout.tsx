@@ -28,7 +28,7 @@ export default function RootLayout({
       >
         <ReactLenis root>
           {children}
-          <DeveloperCredit />
+{/*           <DeveloperCredit /> */}
         </ReactLenis>
       </body>
     </html>
