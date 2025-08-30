@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dipannita Roy - Project Showcase!",
+  title: "Landing Page - Project Showcase!",
   description: "A Simple Design Tool for Designers",
 };
 
